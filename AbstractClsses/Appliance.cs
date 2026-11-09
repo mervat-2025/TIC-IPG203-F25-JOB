@@ -5,21 +5,40 @@ using TIC_IPG203_F25_JOB.Interface;
 
 namespace TIC_IPG203_F25_JOB.AbstractClsses
 {
-    internal class Appliance
+    public abstract class Appliance : IRepairable
     {
+        private readonly string _serialNumber;
+        private string _model;
+        private string _brand;
+        private bool _isUnderWarranty;
+        private string _status;
+        private DateTime _entryDate;
 
-
-        public abstract class Appliance : IRepairable
+        protected Appliance(string serialNumber, string model, string brand, bool isUnderWarranty)
         {
-            private readonly string _serialNumber; // الرقم التسلسلي غير قابل للتعديل
-            private string _brand;  // العلامة التجارية
-            private string _status;  // حالة الصيانة
+            _serialNumber = serialNumber;
+            _model = model;
+            _brand = brand;
+            _isUnderWarranty = isUnderWarranty;
+            _status = "Waiting for Maintenance";
+            _entryDate = DateTime.Now;
+        }
 
-            public string SerialNumber
-            {
-                get { return _serialNumber; }
-            }
+        public string SerialNumber => _serialNumber;
+        public string Status
+        {
+            get => _status;
+            protected set => _status = value;
+        }
 
+        public void StartMaintenance()
+        {
+            _status = "Under Maintenance";
+        }
+
+        public void CompleteRepair()
+        {
+            _status = "Repaired";
         }
     }
 }

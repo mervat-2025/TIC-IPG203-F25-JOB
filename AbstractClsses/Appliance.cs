@@ -7,14 +7,28 @@ namespace TIC_IPG203_F25_JOB.AbstractClsses
 {
     public abstract class Appliance : IRepairable
     {
-        private readonly string _serialNumber;
-        private string _model;
-        private string _brand;
-        private bool _isUnderWarranty;
-        private string _status;
-        private DateTime _entryDate;
+        private readonly string _serialNumber; // الرقم التسلسلي غير قابل للتعديل
+        private string _brand;  // العلامة التجارية
+        private string _status;  // حالة الصيانة
 
-        protected Appliance(string serialNumber, string model, string brand, bool isUnderWarranty)
+        public string SerialNumber
+        {
+            get { return _serialNumber; }
+        }
+
+        public string Brand
+        {
+            get { return _brand; }
+            set { _brand = value; }
+        }
+
+        public string Status
+        {
+            get { return _status; }
+            protected set { _status = value; }
+        }
+
+        protected Appliance(string serialNumber, string model, string brand, bool isUnderWarranty)// الباني لتهيئة كائن الجهاز بالحالة الابتدائية
         {
             _serialNumber = serialNumber;
             _model = model;
@@ -22,23 +36,29 @@ namespace TIC_IPG203_F25_JOB.AbstractClsses
             _isUnderWarranty = isUnderWarranty;
             _status = "Waiting for Maintenance";
             _entryDate = DateTime.Now;
-        }
 
-        public string SerialNumber => _serialNumber;
-        public string Status
-        {
-            get => _status;
-            protected set => _status = value;
         }
 
         public void StartMaintenance()
         {
-            _status = "Under Maintenance";
+            Status = "Under Maintenance";
         }
 
         public void CompleteRepair()
         {
-            _status = "Repaired";
+            Status = "Repaired";
         }
+
+        public string GetStatus()
+        {
+            return Status;
+        }
+
+        // الدالة المجردة لحساب التكلفة التي ستطبّقها الفئات الفرعية
+
+        public abstract decimal CalculateRepairCost();
+
+
+
     }
 }

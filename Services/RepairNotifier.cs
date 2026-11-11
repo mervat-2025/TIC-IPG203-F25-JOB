@@ -4,7 +4,13 @@ using System.Text;
 
 namespace TIC_IPG203_F25_JOB.Services
 {
-    internal class RepairNotifierRepairNotifier
+    public class RepairNotifier// كلاس مستقل للتفويض والأحداث
     {
-    }
+
+
+    }     
+
+
+
 }
+

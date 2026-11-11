@@ -7,6 +7,12 @@ namespace TIC_IPG203_F25_JOB.AbstractClsses
 {
     public abstract class Appliance : IRepairable
     {
+
+        // 1. حقول خاصة وقراءة فقط (Private Readonly Fields) للبيانات الثابتة والحساسة التي يجب ألا تتغير أبداً بعد الإنشاء
+        private readonly string _model;        // موديل الجهاز
+
+
+
         private readonly string _serialNumber; // الرقم التسلسلي غير قابل للتعديل
         private string _brand;  // العلامة التجارية
         private string _status;  // حالة الصيانة

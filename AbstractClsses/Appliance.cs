@@ -13,6 +13,8 @@ namespace TIC_IPG203_F25_JOB.AbstractClsses
 
         private readonly DateTime _entryDate;  // تاريخ دخول الجهاز للصيانة
 
+        private bool _isUnderWarranty;         // هل الجهاز تحت الكفالة؟
+
         private readonly string _serialNumber; // الرقم التسلسلي غير قابل للتعديل
         private string _brand;  // العلامة التجارية
         private string _status;  // حالة الصيانة

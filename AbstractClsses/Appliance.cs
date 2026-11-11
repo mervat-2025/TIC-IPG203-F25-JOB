@@ -19,6 +19,13 @@ namespace TIC_IPG203_F25_JOB.AbstractClsses
         public string Model => _model;
 
         public DateTime EntryDate => _entryDate;
+
+        // 4. خاصية الكفالة مع تحكم آمن
+        public bool IsUnderWarranty
+        {
+            get => _isUnderWarranty;
+            set => _isUnderWarranty = value;
+        }
         private readonly string _serialNumber; // الرقم التسلسلي غير قابل للتعديل
         private string _brand;  // العلامة التجارية
         private string _status;  // حالة الصيانة

@@ -15,6 +15,10 @@ namespace TIC_IPG203_F25_JOB.AbstractClsses
 
         private bool _isUnderWarranty;         // هل الجهاز تحت الكفالة؟
 
+        // 3. خصائص للقراءة فقط (Read-only Properties) لضمان حماية الموديل والتاريخ من أي تعديل خارجي
+        public string Model => _model;
+
+        public DateTime EntryDate => _entryDate;
         private readonly string _serialNumber; // الرقم التسلسلي غير قابل للتعديل
         private string _brand;  // العلامة التجارية
         private string _status;  // حالة الصيانة

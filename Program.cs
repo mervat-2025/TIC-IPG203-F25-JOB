@@ -1,4 +1,7 @@
-﻿namespace TIC_IPG203_F25_JOB
+﻿using TIC_IPG203_F25_JOB.Models;
+using TIC_IPG203_F25_JOB.Services;
+
+namespace TIC_IPG203_F25_JOB
 {
     internal class Program
     {
@@ -6,7 +9,6 @@
         {
             Console.WriteLine("Home Appliance Repair System");
             Console.WriteLine("---------------------------------------------------");
-
         }
     }
 }

@@ -25,4 +25,4 @@ namespace TIC_IPG203_F25_JOB.Static_Class
             }
         }
     }
-}
+

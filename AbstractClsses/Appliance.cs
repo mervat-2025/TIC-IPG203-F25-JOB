@@ -6,22 +6,22 @@ using TIC_IPG203_F25_JOB.Interface;
 namespace TIC_IPG203_F25_JOB.AbstractClsses
 {
     public abstract class Appliance : IRepairable
-    internal class Appliance
+   
     {
 
-        // 1. حقول خاصة وقراءة فقط (Private Readonly Fields) للبيانات الثابتة والحساسة التي يجب ألا تتغير أبداً بعد الإنشاء
+        //  حقول خاصة وقراءة فقط (Private Readonly Fields) للبيانات الثابتة والحساسة التي يجب ألا تتغير أبداً بعد الإنشاء
         private readonly string _model;        // موديل الجهاز
 
-        private readonly DateTime _entryDate;  // تاريخ دخول الجهاز للصيانة
+        private readonly DateTime _entryDate;  // .تاريخ دخول الجهاز للصيانة
 
         private bool _isUnderWarranty;         // هل الجهاز تحت الكفالة؟
 
-        // 3. خصائص للقراءة فقط (Read-only Properties) لضمان حماية الموديل والتاريخ من أي تعديل خارجي
+        // . خصائص للقراءة فقط (Read-only Properties) لضمان حماية الموديل والتاريخ من أي تعديل خارجي
         public string Model => _model;
 
         public DateTime EntryDate => _entryDate;
 
-        // 4. خاصية الكفالة مع تحكم آمن
+        // . خاصية الكفالة مع تحكم آمن
         public bool IsUnderWarranty
         {
             get => _isUnderWarranty;
